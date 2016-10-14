@@ -1,0 +1,26 @@
+{
+  "name": "cli-reporter",
+  "version": "1.0.0",
+  "description": "A way of reporting results of multiple processes without overflowing the terminal",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "babel-node node_modules/.bin/_mocha",
+    "build": "babel src -d dist",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "single-line-log": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.16.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.16.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
+    "babel-plugin-transform-es2015-parameters": "^6.16.0",
+    "chai": "^3.5.0",
+    "fzkes": "^0.14.1",
+    "mocha": "^3.1.0"
+  },
+  "author": "Reviso International ApS",
+  "license": "MIT"
+}
