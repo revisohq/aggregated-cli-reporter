@@ -1,4 +1,6 @@
 import { stdout as log } from 'single-line-log'
+
+const defaults = Symbol('defaults')
 const messages = Symbol('messages')
 
 function getTime(now) {
@@ -10,11 +12,12 @@ function getTime(now) {
 }
 
 export default class CLIReporter {
-	constructor() {
+	constructor({ showTime = true, showName = false } = {}) {
+		this[defaults] = { showTime, showName }
 		this[messages] = []
 	}
 
-	set(name, message, { level = 'log', showTime = true, showName = false } = {}) {
+	set(name, message, { level = 'log', showTime = this[defaults].showTime, showName = this[defaults].showName } = {}) {
 		this[messages] = this[messages].filter(x => x.name != name)
 		this[messages].push({
 			name, message, level, showTime, showName, time: new Date
