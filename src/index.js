@@ -26,9 +26,15 @@ export default class CLIReporter {
 	print() {
 		const message = this[messages]
 			.map(x => {
-				const name = x.showName ? x.name + ': ' : ''
-				const time = x.showTime ? getTime(x.time) + ': ' : ''
-				return name + time + x.message
+				let messages = x.message
+				if(!Array.isArray(messages)) { messages = [ messages ] }
+				return messages
+					.map(message => {
+						const name = x.showName ? x.name + ': ' : ''
+						const time = x.showTime ? getTime(x.time) + ': ' : ''
+						return name + time + message
+					})
+					.join('\n')
 			})
 			.join('\n') + '\n'
 
