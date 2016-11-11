@@ -3,6 +3,13 @@ aggregated-cli-reporter
 
 A way of reporting results of multiple processes without overflowing the terminal.
 
+It will rewrite the previous lines, so there never are more visible than the
+latest message.
+
+Note: If something else is writing to stdout, it will interfere with this module,
+since this module can only delete the `x last lines`, which no longer matches the
+actual lines written to stdout.
+
 
 Usage
 -----
