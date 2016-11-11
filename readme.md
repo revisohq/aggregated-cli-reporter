@@ -1,5 +1,5 @@
-cli-reporter
-============
+aggregated-cli-reporter
+=======================
 
 A way of reporting results of multiple processes without overflowing the terminal.
 
@@ -10,7 +10,7 @@ Usage
 The interface:
 
 ```js
-class CLIReporter {
+class AggregatedCLIReporter {
 	constructor({ showTime = true, showName = false })
 	set(name, messages, { showTime = true, showName = false })
 }
@@ -20,11 +20,11 @@ class CLIReporter {
 ### Creating a new reporter
 
 ```js
-import CLIReporter from 'cli-reporter'
+import AggregatedCLIReporter from 'aggregated-cli-reporter'
 // Or
-const CLIReporter = require('cli-reporter')
+const AggregatedCLIReporter = require('aggregated-cli-reporter')
 
-const reporter = new CLIReporter()
+const reporter = new AggregatedCLIReporter()
 ```
 
 The constructor can take some configuration options:
@@ -33,7 +33,7 @@ The constructor can take some configuration options:
 - `showName`: Shows the name passed to `#set()`. Defaults to `false`.
 
 ```js
-const reporter = new CLIReporter({
+const reporter = new AggregatedCLIReporter({
 	showTime: false,
 	showName: true,
 })
@@ -118,7 +118,7 @@ The `#set()` call takes the same arguments as the constructor. The options will
 override the default for that specific message only.
 
 ```js
-const reporter = new CLIReporter({ showTime: true, showName: true })
+const reporter = new AggregatedCLIReporter({ showTime: true, showName: true })
 
 reporter.set('tool1', 'abc')
 /* output:

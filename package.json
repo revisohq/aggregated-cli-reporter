@@ -1,5 +1,5 @@
 {
-  "name": "cli-reporter",
+  "name": "aggregated-cli-reporter",
   "version": "1.0.0",
   "description": "A way of reporting results of multiple processes without overflowing the terminal",
   "main": "dist/index.js",
@@ -24,6 +24,18 @@
   "engines": {
     "node": "^4.2.6 || ^6.9.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revisohq/aggregated-cli-reporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/revisohq/aggregated-cli-reporter/issues"
+  },
+  "homepage": "https://github.com/revisohq/aggregated-cli-reporter#readme",
+  "keywords": [
+    "cli",
+    "reporter"
+  ],
   "author": "Reviso International ApS",
   "license": "MIT"
 }
